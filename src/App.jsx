@@ -512,7 +512,7 @@ export default function Portfolio() {
               </form>
               <div className="w-full md:w-1/2 flex items-center justify-center">
                <Image
-  src="/undraw_personal_text_re_vqj3.svg"
+  src="\assets\undraw_personal_text_re_vqj3.svg"
   alt="Illustration of a person at a desk"
   width={400}
   height={300}
