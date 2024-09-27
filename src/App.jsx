@@ -14,7 +14,7 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "C++", "DSA", "Python"];
 
 const projects = [
   {
-    title: "Project 1",
+    title: "Music Player",
     description: "A brief description of Project 1 and its key features.",
     liveDemo: "https://tranquil-puppy-e38f58.netlify.app",
     code: "https://github.com/vedantvijay/music",
