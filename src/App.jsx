@@ -511,12 +511,13 @@ export default function Portfolio() {
                 </button>
               </form>
               <div className="w-full md:w-1/2 flex items-center justify-center">
-               <Image
-  src="\assets\undraw_personal_text_re_vqj3.svg"
-  alt="Illustration of a person at a desk"
-  width={400}
-  height={300}
-/>
+              <img
+                  src={`/src/assets/undraw_personal_text_re_vqj3.svg`}
+                  alt="Illustration of a person at a desk"
+                  className="max-w-full h-auto"
+                  width={400}
+                  height={300}
+                />
               </div>
             </div>
           </div>
