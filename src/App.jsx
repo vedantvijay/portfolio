@@ -421,14 +421,14 @@ export default function App() {
                   }`}
                 />
                 <a
-                  href="mailto:vedantvijay7980@gmail.com"
+                  href="mailto:vedantvijaysingh7980@gmail.com"
                   className={`text-lg ${
                     darkMode
                       ? "text-blue-400 hover:text-blue-300"
                       : "text-blue-600 hover:text-blue-800"
                   } transition-colors duration-200`}
                 >
-                  vedantvijay7980@gmail.com
+                  vedantvijaysingh7980@gmail.com
                 </a>
               </div>
             </div>
