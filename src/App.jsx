@@ -17,7 +17,7 @@ const projects = [
     title: "Project 1",
     description: "A brief description of Project 1 and its key features.",
     liveDemo: "https://project1-demo.com",
-    code: "https://github.com/vedantvijay/project1",
+    code: "https://github.com/vedantvijay/music",
   },
   {
     title: "Project 2",
