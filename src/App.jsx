@@ -442,7 +442,7 @@ export default function App() {
         } text-white py-8`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p>&copy; 2023 Vedant Vijay. All rights reserved.</p>
+          <p>Made with ❤️ by Vedant Vijay</p>
         </div>
       </footer>
     </div>
