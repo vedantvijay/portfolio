@@ -36,7 +36,66 @@ export default function Contact({ darkMode }) {
         </h2>
         <div className="flex flex-col md:flex-row gap-8">
           <form onSubmit={handleSubmit} className="w-full md:w-1/2 space-y-4">
-            {/* Form inputs */}
+            <div className="flex gap-4">
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+                className={`w-1/2 p-3 rounded-md ${
+                  darkMode
+                    ? "bg-gray-700 text-white"
+                    : "bg-gray-100 text-gray-800"
+                } focus:outline-none focus:ring-2 focus:ring-cyan-500`}
+                required
+              />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+                className={`w-1/2 p-3 rounded-md ${
+                  darkMode
+                    ? "bg-gray-700 text-white"
+                    : "bg-gray-100 text-gray-800"
+                } focus:outline-none focus:ring-2 focus:ring-cyan-500`}
+                required
+              />
+            </div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={formData.email}
+              onChange={handleChange}
+              className={`w-full p-3 rounded-md ${
+                darkMode
+                  ? "bg-gray-700 text-white"
+                  : "bg-gray-100 text-gray-800"
+              } focus:outline-none focus:ring-2 focus:ring-cyan-500`}
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Message"
+              value={formData.message}
+              onChange={handleChange}
+              rows={6}
+              className={`w-full p-3 rounded-md ${
+                darkMode
+                  ? "bg-gray-700 text-white"
+                  : "bg-gray-100 text-gray-800"
+              } focus:outline-none focus:ring-2 focus:ring-cyan-500 resize-none`}
+              required
+            ></textarea>
+            <button
+              type="submit"
+              className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold hover:from-cyan-600 hover:to-blue-600 transition-colors duration-200"
+            >
+              Submit
+            </button>
           </form>
           <div className="w-full md:w-1/2 flex items-center justify-center">
             <img

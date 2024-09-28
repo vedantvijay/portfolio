@@ -16,7 +16,7 @@ const Footer = ({ darkMode }) => {
               Vedant Vijay
             </h3>
             <p className="text-gray-300 mb-4">
-              A passionate developer creating amazing web experiences.
+              Feel free to connect or ask for help.
             </p>
           </div>
 
@@ -103,7 +103,7 @@ const Footer = ({ darkMode }) => {
                 <span className="sr-only">Twitter</span>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/vedantvijay"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-cyan-400 transition-colors duration-200"
@@ -117,9 +117,7 @@ const Footer = ({ darkMode }) => {
 
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-          <p className="text-gray-400">
-            © {currentYear} Vedant Vijay. All rights reserved.
-          </p>
+          <p className="text-gray-400">Made with ❤️ by Vedant Vijay</p>
         </div>
       </div>
     </footer>
