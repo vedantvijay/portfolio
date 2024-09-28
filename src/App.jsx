@@ -10,7 +10,7 @@ import {
   Twitter,
   Github,
 } from "lucide-react";
-import undrawPersonalText from "/src/assets/undraw_personal_text_re_vqj3.svg";
+import undrawPersonalText from "../src/assets/undraw_personal_text_re_vqj3.svg";
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "C++", "DSA", "Python"];
 
