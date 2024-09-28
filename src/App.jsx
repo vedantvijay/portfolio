@@ -1,10 +1,8 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import {
   Menu,
-  X,
   ExternalLink,
-  Mail,
-  Phone,
   ChevronRight,
   Moon,
   Sun,
@@ -12,6 +10,7 @@ import {
   Twitter,
   Github,
 } from "lucide-react";
+import undrawPersonalText from "/../portfolio/src/assets/undraw_personal_text_re_vqj3.svg";
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "C++", "DSA", "Python"];
 
@@ -511,7 +510,7 @@ export default function Portfolio() {
               </form>
               <div className="w-full md:w-1/2 flex items-center justify-center">
                 <img
-                  src={`${__dirname}/assets/undraw_personal_text_re_vqj3.svg`}
+                  src={undrawPersonalText}
                   alt="Illustration of a person at a desk"
                   className="max-w-full h-auto"
                   width={400}
