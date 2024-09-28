@@ -1,24 +1,42 @@
-import logo from "../assets/kevinRushLogo.png";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaSquareXTwitter,
-  FaInstagram,
-} from "react-icons/fa6";
+import React, { useState, useEffect } from "react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 
-const Navbar = () => {
+export default function Navbar({ darkMode, toggleDarkMode }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        setIsNavbarVisible(false);
+      } else {
+        setIsNavbarVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <nav className="mb-20 flex items-center justify-between py-6">
-      <div className="flex items-center flex-shrink-0 ">
-        <img src={logo} alt="logo" />
-      </div>
-      <div className="m-8 flex items-center gap-4 text-2xl">
-        <FaLinkedin />
-        <FaGithub />
-        <FaInstagram />
-        <FaSquareXTwitter />
-      </div>
+    <nav
+      className={`${
+        darkMode ? "bg-gray-800 bg-opacity-70" : "bg-white bg-opacity-70"
+      } backdrop-filter backdrop-blur-lg fixed w-full z-10 shadow-lg transition-transform duration-300 ease-in-out ${
+        isNavbarVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      {/* Navbar content */}
     </nav>
   );
-};
-export default Navbar;
+}
