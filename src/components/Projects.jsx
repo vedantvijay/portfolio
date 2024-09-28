@@ -1,7 +1,25 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 
-export default function Projects({ projects, darkMode }) {
+const projects = [
+  {
+    title: "Music Player",
+    description:
+      "A sleek and responsive music player application with playlist management.",
+    liveDemo: "https://tranquil-puppy-e38f58.netlify.app",
+    code: "https://github.com/vedantvijay/music",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+  {
+    title: "Project 2",
+    description: "A brief description of Project 2 and its key features.",
+    liveDemo: "https://project2-demo.com",
+    code: "https://github.com/vedantvijay/project2",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+];
+
+export default function Projects({ darkMode }) {
   return (
     <section
       id="projects"

@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function Skills({ skills, darkMode }) {
+const skills = ["HTML", "CSS", "JavaScript", "React", "C++", "DSA", "Python"];
+
+export default function Skills({ darkMode }) {
   return (
     <section
       id="skills"

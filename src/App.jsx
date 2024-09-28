@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -7,29 +8,16 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "C++", "DSA", "Python"];
-
-const projects = [
-  {
-    title: "Music Player",
-    description:
-      "A sleek and responsive music player application with playlist management.",
-    liveDemo: "https://tranquil-puppy-e38f58.netlify.app",
-    code: "https://github.com/vedantvijay/music",
-    image: "/placeholder.svg?height=200&width=300",
-  },
-  {
-    title: "Project 2",
-    description: "A brief description of Project 2 and its key features.",
-    liveDemo: "https://project2-demo.com",
-    code: "https://github.com/vedantvijay/project2",
-    image: "/placeholder.svg?height=200&width=300",
-  },
-];
-
-export default function App() {
+export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    localStorage.setItem("darkMode", JSON.stringify(!darkMode));
+  };
 
   useEffect(() => {
     const savedDarkMode = JSON.parse(
@@ -41,17 +29,21 @@ export default function App() {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) setIsNavbarVisible(false);
+      else setIsNavbarVisible(true);
+      setLastScrollY(currentScrollY);
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    localStorage.setItem("darkMode", JSON.stringify(!darkMode));
-  };
+  }, [lastScrollY]);
 
   const gradientStyle = {
     background: darkMode
@@ -72,12 +64,16 @@ export default function App() {
       }`}
     >
       <div style={gradientStyle} />
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Navbar
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+        isNavbarVisible={isNavbarVisible}
+      />
       <main>
-        <Hero />
+        <Hero darkMode={darkMode} />
         <About darkMode={darkMode} />
-        <Skills skills={skills} darkMode={darkMode} />
-        <Projects projects={projects} darkMode={darkMode} />
+        <Skills darkMode={darkMode} />
+        <Projects darkMode={darkMode} />
         <Contact darkMode={darkMode} />
       </main>
       <Footer darkMode={darkMode} />

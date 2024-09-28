@@ -20,7 +20,6 @@ export default function Contact({ darkMode }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    alert("Form submitted successfully!");
     // Here you would typically send the form data to a server
   };
 
